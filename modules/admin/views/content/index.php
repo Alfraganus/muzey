@@ -118,7 +118,7 @@ $currentLanguage = Yii::$app->language;
                                     ['update',
                                         'id' => $model->id,
                                         'lang' => $langKey,
-                                        'type' => 'blog'
+                                        'type' => $type
                                     ],
                                     [
                                         'class' => 'btn btn-secondary btn-sm',

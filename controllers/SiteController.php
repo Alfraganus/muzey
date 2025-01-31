@@ -85,6 +85,15 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionEksponatlar()
+    {
+        $exponats  =  ContentService::getContentType(ContentService::CONTENT_TYPE_EKSPONAT,true,'uz');
+
+        return $this->render('exponats', [
+            'exponats' => $exponats,
+        ]);
+    }
+
     /**
      * Login action.
      *

@@ -43,6 +43,16 @@ AppAsset::register($this);
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="/" class="nav-item nav-link active">Бош сахифа</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Fliallar</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="feature.html" class="dropdown-item">Features</a>
+                    <a href="appointment.html" class="dropdown-item">Appointment</a>
+                    <a href="team.html" class="dropdown-item">Our Team</a>
+                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    <a href="404.html" class="dropdown-item">404 Page</a>
+                </div>
+
           <!--  <a href="about.html" class="nav-item nav-link">About</a>
             <a href="courses.html" class="nav-item nav-link">Courses</a>
             <div class="nav-item dropdown">
@@ -55,6 +65,9 @@ AppAsset::register($this);
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>-->
             </div>
+            <a href="/site/eksponatlar" class="nav-item nav-link">Eksponatlar</a>
+            <a href="/site/contact" class="nav-item nav-link" >Bog'lanish</a>
+
         </div>
     </div>
 </nav>

@@ -16,7 +16,7 @@
                                         <?= $contentInfo->title ?? "" ?>
                                     </h1>
                                     <a href="<?= Url::to(['single-page', 'id' => $slide->id]) ?>"
-                                       class="btn btn-primary py-sm-3 px-sm-5">Батафсил</a>
+                                       class="btn btn-primary py-sm-3 px-sm-5">Batafsil</a>
                                 </div>
                             </div>
                         </div>
@@ -58,18 +58,18 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="position-relative overflow-hidden ps-5 h-100" style="min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="/uploads/<?= $aboutMuseum->media->file_name ?>"
+                    <img class="position-absolute w-100 h-100" src="/uploads/<?= $aboutMuseum->media?->file_name??"" ?>"
                          alt="" style="object-fit: cover;">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="h-100">
-                    <h1 class="display-6 mb-4"><?= $aboutMuseum->contentInfos[0]->title ?></h1>
-                    <p><?= $aboutMuseum->getShortDescription(50) ?></p>
+                    <h1 class="display-6 mb-4"><?= $aboutMuseum->contentInfos[0]?->title??"" ?></h1>
+                    <p><?= $aboutMuseum?->getShortDescription(50)??"" ?></p>
                     <div class="row g-4">
                         <div class="col-sm-6">
                             <a class="btn btn-primary py-3 px-5"
-                               href="<?= Url::to(['single-page', 'id' => $aboutMuseum->id]) ?>">Батафсил</a>
+                               href="<?= Url::to(['single-page', 'id' => $aboutMuseum?->id??null]) ?>">Batafsil</a>
                         </div>
 
                     </div>

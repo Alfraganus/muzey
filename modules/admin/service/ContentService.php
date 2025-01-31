@@ -13,6 +13,7 @@ class  ContentService
     const CONTENT_TYPE_ABOUTMUSEUM = 'muzey haqida';
     const CONTENT_TYPE_EVENTS = 'tadbirlar';
     const CONTENT_TYPE_EKSPONAT = 'eksponatlar';
+    const CONTENT_TYPE_FLIAL = 'fliallar';
 
 
     public static function contentTypes(): array
@@ -24,6 +25,7 @@ class  ContentService
             self::CONTENT_TYPE_ABOUTMUSEUM,
             self::CONTENT_TYPE_EVENTS,
             self::CONTENT_TYPE_EKSPONAT,
+            self::CONTENT_TYPE_FLIAL,
         ];
     }
 
