@@ -47,4 +47,23 @@ class  ContentService
         return $is_plural ? $query->all() : $query->one();
     }
 
+
+    private static $translations = [
+        'hello' => [
+            'en' => 'Hello',
+            'uz' => 'Salom',
+            'ru' => 'Привет',
+        ],
+        'goodbye' => [
+            'en' => 'Goodbye',
+            'uz' => 'Xayr',
+            'ru' => 'До свидания',
+        ],
+    ];
+
+    public static function getTranslation($word, $language)
+    {
+        return self::$translations[$word][$language] ?? null;
+    }
+
 }

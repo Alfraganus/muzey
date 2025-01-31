@@ -18,13 +18,14 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $css = [
+        'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap',
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css',
         'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css',
         '/lib/animate/animate.min.css',
+        '/lib/lightbox/css/lightbox.min.css',
         '/lib/owlcarousel/assets/owl.carousel.min.css',
         '/css/bootstrap.min.css',
         '/css/style.css',
-//        'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap',
     ];
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -35,9 +36,13 @@ class AppAsset extends AssetBundle
         '/lib/wow/wow.min.js',
         '/lib/easing/easing.min.js',
         '/lib/waypoints/waypoints.min.js',
+        '/lib/counterup/counterup.min.js',
         '/lib/owlcarousel/owl.carousel.min.js',
-        '/js/main.js', // Your custom JS
-    ];
+        '/lib/lightbox/js/lightbox.min.js',
+        '/js/main.js',
+
+        ];
+
 
     public $depends = [
 //        'yii\web\YiiAsset',
