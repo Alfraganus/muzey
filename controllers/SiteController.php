@@ -63,16 +63,22 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $slides =  ContentService::getContentType(ContentService::CONTENT_TYPE_BLOG,true,'uz');
-        $contacts =  ContentService::getContentType(ContentService::CONTENT_TYPE_CONTACT,true,'uz');
         $aboutMuseum =  ContentService::getContentType(ContentService::CONTENT_TYPE_ABOUTMUSEUM,false,'uz');
+        $aboutMuseumFacts =  ContentService::getContentType(ContentService::CONTENT_TYPE_FACTS,true,'uz','ASC');
         $events  =  ContentService::getContentType(ContentService::CONTENT_TYPE_EVENTS,true,'uz',3);
         $exponats  =  ContentService::getContentType(ContentService::CONTENT_TYPE_EKSPONAT,true,'uz',9);
+        $bannerFacts  =  ContentService::getContentType(ContentService::CONTENT_TYPE_BANNER_FACTS,true,'uz',9);
+        $workTimes  =  ContentService::getContentType(ContentService::CONTENT_TYPE_WORK_TIME,true,'uz',7,'asc');
+        $adresses  =  ContentService::getContentType(ContentService::CONTENT_TYPE_ADRESSES,true,'uz',7,'asc');
         return $this->render('index',[
             'slides'=>$slides,
-            'contacts'=>$contacts,
+            'aboutMuseumFacts'=>$aboutMuseumFacts,
             'aboutMuseum'=>$aboutMuseum,
             'events'=>$events,
             'exponats'=>$exponats,
+            'bannerFacts'=>$bannerFacts,
+            'workTimes'=>$workTimes,
+            'adresses'=>$adresses,
         ]);
     }
 
@@ -83,6 +89,15 @@ class SiteController extends Controller
         return $this->render('single_page', [
             'model' => $model,
         ]);
+    }
+
+    public function actionAboutMuseum()
+    {
+        $aboutMuseum =  ContentService::getContentType(ContentService::CONTENT_TYPE_ABOUTMUSEUM,false,'uz');
+        return $this->render('single_page', [
+            'model' => $aboutMuseum->contentInfos[0],
+        ]);
+
     }
 
     public function actionEksponatlar()
