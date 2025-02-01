@@ -8,7 +8,7 @@
                     <div class="d-flex align-items-center pt-4 animated slideInDown" style="margin-left: 50%">
 <!--                        <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">Batafsil</a>-->
                         <button type="button" class="btn-play" data-bs-toggle="modal"
-                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                                data-src="https://www.youtube.com/embed/Te9Eg4AV_Fo" data-bs-target="#videoModal">
                             <span></span>
                         </button>
                         <!--                    <h6 class="text-white m-0 ms-4 d-none d-sm-block">Ko'rish</h6>-->
@@ -17,18 +17,15 @@
         </div>
         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
             <div class="owl-carousel header-carousel">
-                <?php    foreach ($slides as $slide): ?>
+                <?php   foreach ($slides as $slide): ?>
                 <div class="owl-carousel-item">
                     <img class="img-fluid" src="/uploads/<?= $slide->media->file_name ?>" alt="">
                 </div>
                 <?php endforeach; ?>
-
             </div>
         </div>
     </div>
 </div>
-<!-- Header End -->
-
 
 <!-- Video Modal Start -->
 <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -59,10 +56,9 @@
 <!--                <p><span class="text-primary me-2">#</span>Welcome To Zoofari</p>-->
                 <h1 class="display-5 mb-4"><?= $aboutMuseum->contentInfos[0]?->title??"" ?></h1>
                 <p class="mb-4">  <?= $aboutMuseum?->getShortDescription(50)??"" ?></p>
-                <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Free Car Parking</h5>
-                <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Natural Environment</h5>
-                <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Professional Guide & Security</h5>
-                <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>World Best Animals</h5>
+                <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Музей дастлаб 1934 йилда ташкил этилган </h5>
+                <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Музейда 1 та филиал ва 4 бўлимлар фаолият юритади</h5>
+                <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Музей фондларида 156 мингдан зиёд ноёб тарихий xужжатлар сақланмоқда</h5>
                 <a class="btn btn-primary py-3 px-5 mt-3" href="">Batafsil</a>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -119,88 +115,82 @@
             </div>
         </div>
         <div class="row g-4">
+            <?php foreach ($exponats as $exponat): ?>
+            <?php $exponatInfo = $exponat->contentInfos[0] ?? null; ?>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <a class="animal-item" href="/img/animal-md-1.jpg" data-lightbox="animal">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/animal-md-1.jpg" alt="">
-                                <div class="animal-text p-4">
-                                    <p class="text-white small text-uppercase mb-0">Animal</p>
-                                    <h5 class="text-white mb-0">Elephant</h5>
-                                </div>
+                <div class="col-12">
+                    <a class="animal-item" href="/uploads/<?= $exponat->media->file_name ?>" data-lightbox="animal">
+                        <div class="position-relative">
+                            <center>
+                                <img style="height: 350px;width: 600px" class="img-fluid" src="/uploads/<?= $exponat->media->file_name ?>" alt="">
+                            </center>
+                            <div class="animal-text p-4">
+                                <h5 class="text-white mb-0"><?= $exponatInfo->title ?? "" ?></h5>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="animal-item" href="/img/animal-lg-1.jpg" data-lightbox="animal">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/animal-lg-1.jpg" alt="">
-                                <div class="animal-text p-4">
-                                    <p class="text-white small text-uppercase mb-0">Animal</p>
-                                    <h5 class="text-white mb-0">Elephant</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <a class="animal-item" href="/img/animal-lg-2.jpg" data-lightbox="animal">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/animal-lg-2.jpg" alt="">
-                                <div class="animal-text p-4">
-                                    <p class="text-white small text-uppercase mb-0">Animal</p>
-                                    <h5 class="text-white mb-0">Elephant</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="animal-item" href="/img/animal-md-2.jpg" data-lightbox="animal">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/animal-md-2.jpg" alt="">
-                                <div class="animal-text p-4">
-                                    <p class="text-white small text-uppercase mb-0">Animal</p>
-                                    <h5 class="text-white mb-0">Elephant</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <a class="animal-item" href="/img/animal-md-3.jpg" data-lightbox="animal">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/animal-md-3.jpg" alt="">
-                                <div class="animal-text p-4">
-                                    <p class="text-white small text-uppercase mb-0">Animal</p>
-                                    <h5 class="text-white mb-0">Elephant</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="animal-item" href="/img/animal-lg-3.jpg" data-lightbox="animal">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/animal-lg-3.jpg" alt="">
-                                <div class="animal-text p-4">
-                                    <p class="text-white small text-uppercase mb-0">Animal</p>
-                                    <h5 class="text-white mb-0">Elephant</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
+
         </div>
     </div>
 </div>
 <!-- Animal End -->
+
+
+<!-- Membership Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-6">
+                <h1 class="display-5 mb-0">Tadbirlar <span class="text-primary"></span></h1>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <a class="btn btn-primary py-3 px-5" href="">Batafsil</a>
+            </div>
+        </div>
+        <div class="row g-4">
+            <?php $i = 0; foreach ($events as $event): $i++ ?>
+                <?php $eventInfo = $event->contentInfos[0] ?? null; ?>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="membership-item position-relative" style="height: 400px;">
+                        <img class="img-fluid" src="/uploads/<?= $event->media->file_name ?>" alt="">
+                        <h1 class="display-1"><?=$i?></h1>
+                        <h5 class="text-white mb-3"><?= $eventInfo->title ?? "" ?></h5>
+
+                        <a class="btn btn-outline-light px-4 mt-3" href="">Batafsil</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            <!--          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                          <div class="membership-item position-relative">
+                              <img class="img-fluid" src="img/animal-lg-2.jpg" alt="">
+                              <h1 class="display-1">02</h1>
+                              <h4 class="text-white mb-3">Standard</h4>
+                              <h3 class="text-primary mb-4">$149.00</h3>
+                              <p><i class="fa fa-check text-primary me-3"></i>15% discount</p>
+                              <p><i class="fa fa-check text-primary me-3"></i>4 adult and 4 child</p>
+                              <p><i class="fa fa-check text-primary me-3"></i>Free animal exhibition</p>
+                              <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                          <div class="membership-item position-relative">
+                              <img class="img-fluid" src="img/animal-lg-3.jpg" alt="">
+                              <h1 class="display-1">03</h1>
+                              <h4 class="text-white mb-3">Premium</h4>
+                              <h3 class="text-primary mb-4">$199.00</h3>
+                              <p><i class="fa fa-check text-primary me-3"></i>20% discount</p>
+                              <p><i class="fa fa-check text-primary me-3"></i>6 adult and 6 child</p>
+                              <p><i class="fa fa-check text-primary me-3"></i>Free animal exhibition</p>
+                              <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
+                          </div>
+                      </div>-->
+        </div>
+    </div>
+</div>
+<!-- Membership End -->
 
 
 <!-- Visiting Hours Start -->
@@ -273,59 +263,5 @@
     </div>
 </div>
 <!-- Visiting Hours End -->
-
-
-<!-- Membership Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
-            <div class="col-lg-6">
-                <h1 class="display-5 mb-0">Tadbirlar <span class="text-primary"></span></h1>
-            </div>
-            <div class="col-lg-6 text-lg-end">
-                <a class="btn btn-primary py-3 px-5" href="">Special Pricing</a>
-            </div>
-        </div>
-        <div class="row g-4">
-            <?php foreach ($events as $event): ?>
-            <?php $eventInfo = $event->contentInfos[0] ?? null; ?>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="membership-item position-relative" style="height: 400px;">
-                    <img class="img-fluid" src="/uploads/<?= $event->media->file_name ?>" alt="">
-                    <h1 class="display-1">01</h1>
-                    <h5 class="text-white mb-3"><?= $eventInfo->title ?? "" ?></h5>
-
-                    <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                </div>
-            </div>
-            <?php endforeach; ?>
-  <!--          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="membership-item position-relative">
-                    <img class="img-fluid" src="img/animal-lg-2.jpg" alt="">
-                    <h1 class="display-1">02</h1>
-                    <h4 class="text-white mb-3">Standard</h4>
-                    <h3 class="text-primary mb-4">$149.00</h3>
-                    <p><i class="fa fa-check text-primary me-3"></i>15% discount</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>4 adult and 4 child</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Free animal exhibition</p>
-                    <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="membership-item position-relative">
-                    <img class="img-fluid" src="img/animal-lg-3.jpg" alt="">
-                    <h1 class="display-1">03</h1>
-                    <h4 class="text-white mb-3">Premium</h4>
-                    <h3 class="text-primary mb-4">$199.00</h3>
-                    <p><i class="fa fa-check text-primary me-3"></i>20% discount</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>6 adult and 6 child</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Free animal exhibition</p>
-                    <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
-                </div>
-            </div>-->
-        </div>
-    </div>
-</div>
-<!-- Membership End -->
 
 

@@ -66,7 +66,7 @@ class SiteController extends Controller
         $contacts =  ContentService::getContentType(ContentService::CONTENT_TYPE_CONTACT,true,'uz');
         $aboutMuseum =  ContentService::getContentType(ContentService::CONTENT_TYPE_ABOUTMUSEUM,false,'uz');
         $events  =  ContentService::getContentType(ContentService::CONTENT_TYPE_EVENTS,true,'uz',3);
-        $exponats  =  ContentService::getContentType(ContentService::CONTENT_TYPE_EKSPONAT,true,'uz',4);
+        $exponats  =  ContentService::getContentType(ContentService::CONTENT_TYPE_EKSPONAT,true,'uz',9);
         return $this->render('index',[
             'slides'=>$slides,
             'contacts'=>$contacts,

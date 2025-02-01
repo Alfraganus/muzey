@@ -4,6 +4,7 @@ namespace app\modules\admin\service;
 
 
 use app\models\Content;
+use app\models\ContentInfo;
 
 class  ContentService
 {
@@ -46,6 +47,20 @@ class  ContentService
 
         return $is_plural ? $query->all() : $query->one();
     }
+
+    public static function getContentInfoByContentId($content_id, $language, $id = null)
+    {
+        $query = ContentInfo::find()
+            ->where(['content_id' => $content_id])
+            ->andWhere(['language' => $language]);
+
+        if ($id !== null) {
+            $query->andWhere(['id' => $id]);
+        }
+
+        return $query->one();
+    }
+
 
 
     private static $translations = [
