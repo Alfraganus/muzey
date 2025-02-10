@@ -34,22 +34,23 @@ class  ContentService
         ];
     }
 
-    public static function getContentType($type, $is_plural, $language = null, $limit = null,$orderBy = 'desc')
+    public static function getContentType($type, $is_plural, $language, $limit = null, $orderBy = 'desc')
     {
         $query = Content::find()
-            ->joinWith('contentInfos')
+            ->joinWith(['contentInfos' => function ($query) use ($language) {
+                $query->onCondition(['content_info.language' => $language]); // Filter by language
+            }])
             ->where(['content.type' => $type]);
-
-        if ($language) {
-            $query->andWhere(['content_info.language' => $language]);
-        }
 
         if ($limit) {
             $query->limit($limit);
         }
+
         $query->orderBy("id $orderBy");
+
         return $is_plural ? $query->all() : $query->one();
     }
+
 
     public static function getContentInfoByContentId($content_id, $language, $id = null)
     {

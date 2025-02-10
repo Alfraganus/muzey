@@ -11,7 +11,19 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'language' => isset($_SESSION['language']) ? $_SESSION['language'] : 'uz',
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                    ],
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '6q5wd65qd65qd4q56d',
@@ -56,6 +68,11 @@ $config = [
             'class' => 'app\modules\admin\admin',
         ],
     ],
+    'on beforeRequest' => function ($event) {
+        if (Yii::$app->session->has('language')) {
+            Yii::$app->language = Yii::$app->session->get('language');
+        }
+    },
     'params' => $params,
 ];
 

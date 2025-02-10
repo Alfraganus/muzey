@@ -33,6 +33,15 @@ class Content extends \yii\db\ActiveRecord
 
     public $file_name;
 
+    public static function getLanguages()
+    {
+        return  [
+            'en' => ['label' => 'English', 'icon' => '🇬🇧'],
+            'ru' => ['label' => 'Русский', 'icon' => '🇷🇺'],
+            'uz' => ['label' => 'O‘zbek', 'icon' => '🇺🇿'],
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */

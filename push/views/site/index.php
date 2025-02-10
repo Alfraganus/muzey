@@ -80,7 +80,7 @@
         <div class="row g-4">
             <?php foreach ($bannerFacts as $banner): ?>
                 <?php $bannerInfo = $banner->contentInfos[0] ?? null; ?>
-                <?= $bannerInfo?->description ?>
+                <?= $bannerInfo->description ?>
             <?php endforeach; ?>
         </div>
     </div>
@@ -108,10 +108,10 @@
                             <div class="position-relative">
                                 <center>
                                     <img style="height: 350px;width: 600px" class="img-fluid"
-                                         src="/uploads/<?= $exponat?->media?->file_name ?>" alt="">
+                                         src="/uploads/<?= $exponat->media->file_name ?>" alt="">
                                 </center>
                                 <div class="animal-text p-4">
-                                    <h5 class="text-white mb-0"><?= $exponatInfo?->title ?? "" ?></h5>
+                                    <h5 class="text-white mb-0"><?= $exponatInfo->title ?? "" ?></h5>
                                 </div>
                             </div>
                         </a>
@@ -140,9 +140,9 @@
                 <?php $eventInfo = $event->contentInfos[0] ?? null; ?>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="membership-item position-relative" style="height: 400px;">
-                        <img class="img-fluid" src="/uploads/<?= $event?->media?->file_name ?>" alt="">
+                        <img class="img-fluid" src="/uploads/<?= $event->media->file_name ?>" alt="">
                         <h1 class="display-1"><?= $i ?></h1>
-                        <h5 class="text-white mb-3"><?= $eventInfo?->title ?? "" ?></h5>
+                        <h5 class="text-white mb-3"><?= $eventInfo->title ?? "" ?></h5>
 
                         <a class="btn btn-outline-light px-4 mt-3" href="<?=Url::to(['single-page','id'=>$event->id])?>"><?=Yii::t('app','Batafsil')?></a>
                     </div>
@@ -165,8 +165,8 @@
                     <?php foreach ($workTimes as $workTime): ?>
                     <?php $workTimeInfo = $workTime->contentInfos[0] ?? null; ?>
                     <li class="list-group-item">
-                        <span><?= $workTimeInfo?->title ?? "" ?></span>
-                        <span><?= $workTimeInfo?->description ?? "" ?></span>
+                        <span><?= $workTimeInfo->title ?? "" ?></span>
+                        <span><?= $workTimeInfo->description ?? "" ?></span>
                     </li>
                     <?php endforeach; ?>
 
@@ -179,8 +179,8 @@
                     <?php foreach ($adresses as $adress): ?>
                     <?php $adressInfo = $adress->contentInfos[0] ?? null; ?>
                     <tr>
-                        <td><?= $adressInfo?->title ?? "" ?></td>
-                        <td><?= $adressInfo?->description ?? "" ?></td>
+                        <td><?= $adressInfo->title ?? "" ?></td>
+                        <td><?= $adressInfo->description ?? "" ?></td>
                     </tr>
                     <?php endforeach; ?>
 
